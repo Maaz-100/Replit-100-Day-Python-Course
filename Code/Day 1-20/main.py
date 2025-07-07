@@ -421,14 +421,12 @@ def day_17():
 
 
 def day_18():  # feedback loops
-    import random
     print()
     print("Running Day 18")
     print("Guessing game")
 
-    to_guess = random.randint(1, 1000000)
+    to_guess = 8548411
     attempt = 0
-    print(to_guess)
 
     while True:
         guess = int(input("enter a number: "))
