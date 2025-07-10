@@ -65,9 +65,24 @@ def day_23(): # subroutines
             print("Wrong name or password")
             print()
 
-def day_24():
+def day_24():  # passing parameters to subroutines 
     print()
     print("Entering Day 24")
+    print("Infinity dice")
+
+
+    def roll_dice(sides):
+        import random
+        print("rolling dice")
+        print(random.randint(1,sides))
+    
+    while True:
+        print("")
+        stop = input("stop? ")
+        if stop == "yes":
+            break
+        sides = int(input("how many sides do you want on your dice:"))
+        roll_dice(sides)
 
 
 def day_25():
