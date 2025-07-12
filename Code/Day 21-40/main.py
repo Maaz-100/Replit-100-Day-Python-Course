@@ -1,29 +1,29 @@
 def day_21():  # for loop + maths skills
     print()
     print("Entering Day 21")
-    print("Multiplication tables") 
+    print("Multiplication tables")
 
-    
     table = int(input("Enter the number you wanted to be tested on: "))
     end = int(input("Enter how many questions do you want : "))
-    end = (table*end)+table
+    end = (table * end) + table
     correct = 0
-    j = 0 # made j as another counter to show multipler
+    j = 0  # made j as another counter to show multplier
 
-    for i in range(0,end,table):
-        ans = int(input(f"what is {table} x {j}  = " )) # using f strings as normal strings wont support variable in input lines 
+    for i in range(0, end, table):
+        ans = int(input(
+            f"what is {table} x {j}  = "))  # using f strings as normal strings wont support variable in input lines
         if ans == i:
             print("Correct")
             print("")
-            correct +=1
+            correct += 1
         else:
-            print("Wrong correct answer is " , i)
-        j+=1
+            print("Wrong correct answer is ", i)
+        j += 1
 
-    print(f"you got  {correct}") #starting to like F strings may use them more 
+    print(f"you got  {correct}")  # starting to like F strings may use them more
 
 
-def day_22(): # starting to use libraries 
+def day_22():  # starting to use libraries
     import random
     print()
     print("Entering Day 22")
@@ -45,19 +45,17 @@ def day_22(): # starting to use libraries
             print("well done you guessed it and it took ", attempt, " attempt(s)")
 
 
-
-def day_23(): # subroutines
+def day_23():  # subroutines
     print()
     print("Entering Day 23")
 
     def login():
         print("")
         print("Welcome")
-    
 
     while True:
-        name = input("Enter Your Name: ") 
-        password = int(input("Enter Your Password: "))    
+        name = input("Enter Your Name: ")
+        password = int(input("Enter Your Password: "))
         if (name == "john") and (password == 1234):
             login()
             break
@@ -65,17 +63,17 @@ def day_23(): # subroutines
             print("Wrong name or password")
             print()
 
-def day_24():  # passing parameters to subroutines 
+
+def day_24():  # passing parameters to subroutines
     print()
     print("Entering Day 24")
     print("Infinity dice")
 
-
     def roll_dice(sides):
         import random
         print("rolling dice")
-        print(random.randint(1,sides))
-    
+        print(random.randint(1, sides))
+
     while True:
         print("")
         stop = input("stop? ")
@@ -85,14 +83,113 @@ def day_24():  # passing parameters to subroutines
         roll_dice(sides)
 
 
-def day_25():
+def day_25():  # return function
+
     print()
     print("Entering Day 25")
+    print("health stats generator")
+
+    def roll_6_and_8():
+        import random
+        dice = (random.randint(1, 6)) * (random.randint(1, 8))
+        return dice
+
+    while True:
+        name = input("Enter your characters name or enter no to stop: ")
+
+        if name.lower() == "no":
+            break
+
+        print(f"Characters {name} , HP: {roll_6_and_8()}")
+        print()
 
 
-def day_26():
-    print()
-    print("Entering Day 26")
+def day_26():  # Using OS library
+
+    # This is the code I am given to build on
+    # import os
+    # import time
+
+    # import pygame
+
+    # pygame.init()
+    # pygame.mixer.init()
+    # sound = pygame.mixer.Sound('audio.wav')
+    # sound.play()
+
+    # def pause():
+    # pygame.mixer.pause()
+
+    # pause()
+
+    # def play():
+    # Play the sound
+    # pygame.mixer.unpause()
+    # while True:
+    # Start taking user input and doing something with it
+    # input()
+
+    # while True:
+    # # clear the screen 
+
+    # # Show the menu
+
+    # #take user's input
+
+    # # check whether you should call the play() subroutine depending on user's input
+    # if True:
+    #    play() 
+
+    import os, pygame, time
+
+    pygame.init()
+    pygame.mixer.init()
+    sound = pygame.mixer.Sound('audio.wav')
+    sound.play()
+
+    def pause():
+        pygame.mixer.pause()
+        while True:
+            print(("Enter 1 to resume"))
+            print(("Enter 2 to go to menu"))
+
+            choice = int(input())
+            if choice == 1:
+                play()
+            elif choice == 2:
+                menu()
+            else:
+                print("Enter 1 or 2")
+
+    def play():
+        pygame.mixer.unpause()  # Play the sound
+
+        while True:
+            choice = int(input("Press 1 to stop: "))
+            if choice == 1:
+                pause()
+            else:
+                print("You can only enter 1")
+
+    def menu():
+        print("Enter 1 for tunes")
+        print("Enter 2 to exit")
+        choice = int(input())
+
+        if choice == 1:
+            play()
+        elif choice == 2:
+            print("bye")
+            return choice
+
+    while True:
+        os.system("cls" if os.name == "nt" else "clear") # The basic version doesnt work so Ai suggested this
+        print("\n" * 100) # and this
+
+        choice = menu()
+        if choice == 2:
+            break
+        print("")
 
 
 def day_27():
@@ -165,8 +262,6 @@ def day_40():
     print("Entering Day 40")
 
 
-
-
 while True:
     day = int(input("which day do you want to go to. Or Press 0 to exit: "))
 
@@ -213,7 +308,6 @@ while True:
     elif day == 40:
         day_40()
     else:
-        print("This file only contains day 21 to 40" )
+        print("This file only contains day 21 to 40")
 
 print("bye")
-
