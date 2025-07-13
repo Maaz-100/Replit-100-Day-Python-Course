@@ -183,8 +183,8 @@ def day_26():  # Using OS library
             return choice
 
     while True:
-        os.system("cls" if os.name == "nt" else "clear") # The basic version doesnt work so Ai suggested this
-        print("\n" * 100) # and this
+        os.system("cls" if os.name == "nt" else "clear")  # The basic version doesn't work so Ai suggested this
+        print("\n" * 100)  # and this
 
         choice = menu()
         if choice == 2:
@@ -192,9 +192,43 @@ def day_26():  # Using OS library
         print("")
 
 
-def day_27():
+def day_27():  # Challenge Part 1
     print()
     print("Entering Day 27")
+    print("Character Generator ")
+
+    def hitpoint():
+        import random
+
+        hp = random.randint(1, 6) * random.randint(1, 12)
+        hp = hp // 2 # whole number divsion which returns only the
+        hp = hp + 10
+        return hp
+
+    def power():
+        import random
+
+        pwr = random.randint(1, 6) * random.randint(1, 12)
+        pwr = pwr // 2
+        pwr = pwr + 12
+        return pwr
+
+    def character_genrator():
+        name = input("Enter Your Character Name: ")
+        title = input("Give Your Character A  Title . eg The Wise: ")
+        role = input("Give your Character a role; Supporter , Attacker , Scouter , Defender :")
+        print("")
+
+        print(f"{name} {title} who is a {role}")
+        print(f"HP: {hitpoint()}")  # calling the function from earlier to generate the characters stats
+        print(f"HP: {power()}")
+
+    while True:
+        stop = input("Stop? ")
+        if stop.lower() == "stop":
+            break
+        else:
+            character_genrator()
 
 
 def day_28():
