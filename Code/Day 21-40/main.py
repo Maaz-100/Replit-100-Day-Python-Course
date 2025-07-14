@@ -1,3 +1,6 @@
+import time
+
+
 def day_21():  # for loop + maths skills
     print()
     print("Entering Day 21")
@@ -201,7 +204,7 @@ def day_27():  # Challenge Part 1
         import random
 
         hp = random.randint(1, 6) * random.randint(1, 12)
-        hp = hp // 2 # whole number divsion which returns only the
+        hp = hp // 2  # whole number divsion which returns only the
         hp = hp + 10
         return hp
 
@@ -231,9 +234,98 @@ def day_27():  # Challenge Part 1
             character_genrator()
 
 
-def day_28():
+def day_28():  # Challenge Part 2
     print()
     print("Entering Day 28")
+    print("Character Game ")
+
+    def hitpoint():
+        import random
+
+        hp = random.randint(1, 6) * random.randint(1, 12)
+        hp = hp // 2  # whole number divsion which returns only the
+        hp = hp + 10
+        return hp
+
+    def power():
+        import random
+
+        pwr = random.randint(1, 6) * random.randint(1, 12)
+        pwr = pwr // 2
+        pwr = pwr + 12
+        return pwr
+
+    def character_genrator_1():
+        name_1 = input("Enter Your Character 1 Name: ")
+        title_1 = input("Give Your Character A  Title, The Wise: ")
+        role_1 = input("Give your Character a role; Supporter , Attacker , Scouter , Defender :")
+        print("")
+
+        hitpoint_1 = hitpoint()
+        power_1 = power()
+        print(f"{name_1} {title_1} who is a {role_1}")
+        print(f"HP: {hitpoint_1}")  # calling the function from earlier to generate the characters stats
+        print(f"Attack: {power_1}")
+        print()
+
+        return name_1, title_1, role_1, hitpoint_1, power_1
+
+    def character_genrator_2():
+        name_2 = input("Enter Your Character 2 Name: ")
+        title_2 = input("Give Your Character A  Title, eg The Wise: ")
+        role_2 = input("Give your Character a role; Supporter , Attacker , Scouter , Defender :")
+        print("")
+
+        hitpoint_2 = hitpoint()
+        power_2 = power()
+        print(f"{name_2} {title_2} who is a {role_2}")
+        print(f"HP: {hitpoint_2}")  # calling the function from earlier to generate the characters stats
+        print(f"Attack: {power_2}")
+        print()
+
+        return name_2, title_2, role_2, hitpoint_2, power_2
+
+    name_1, title_1, role_1, hitpoint_1, power_1 = character_genrator_1()
+    name_2, title_2, role_2, hitpoint_2, power_2 = character_genrator_2()
+
+    print("The battle starts")
+
+    while True:
+        print()
+        hitpoint_1 = hitpoint_1 - power_2
+        hitpoint_2 = hitpoint_2 - power_1
+
+        print(f"{name_1} does {power_1}damage")
+        print(f"{name_2} does {power_2}damage")
+        print("")
+
+        time.sleep(2)
+
+        print(f"{name_1} has {hitpoint_1} HP left")
+        print(f"{name_2} has {hitpoint_2} HP left")
+        print("")
+
+        time.sleep(1)
+
+        if hitpoint_1 <= 0 and hitpoint_2 > 0:
+            print(f"Game Over {name_2} {title_2} wins ")
+            print(f"{name_2} had {hitpoint_2} left")
+            print()
+            break
+
+        elif hitpoint_1 > 0 and hitpoint_2 <= 0:
+            print(f"Game Over {name_1} {title_1} wins ")
+            print(f"{name_1} had {hitpoint_1} left")
+            print()
+            break
+
+        elif hitpoint_1 <= 0 and hitpoint_2 <= 0:
+            print(f"Game Over {name_1} {title_1}; And {name_2} {title_2} draws ")
+            print(f"They both killed each other at the same time ")
+            print()
+            break
+
+        print("The battle continues")
 
 
 def day_29():
@@ -297,7 +389,7 @@ def day_40():
 
 
 while True:
-    day = int(input("which day do you want to go to. Or Press 0 to exit: "))
+    day = int(input("Which day do you want to go to. Or Press 0 to exit: "))
 
     if day == 0:
         break
