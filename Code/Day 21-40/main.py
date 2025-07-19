@@ -8,13 +8,14 @@ def day_21():  # for loop + maths skills
 
     table = int(input("Enter the number you wanted to be tested on: "))
     end = int(input("Enter how many questions do you want : "))
+    limit = end
     end = (table * end) + table
     correct = 0
     j = 0  # made j as another counter to show multplier
 
     for i in range(0, end, table):
         ans = int(input(
-            f"what is {table} x {j}  = "))  # using f strings as normal strings wont support variable in input lines
+            f"What is {table} x {j}  = "))  # using f strings as normal strings won't support variable in input lines
         if ans == i:
             print("Correct")
             print("")
@@ -23,7 +24,7 @@ def day_21():  # for loop + maths skills
             print("Wrong correct answer is ", i)
         j += 1
 
-    print(f"you got  {correct}")  # starting to like F strings may use them more
+    print(f"you got {correct} out of {limit - 1} ")  # starting to like F strings may use them more
 
 
 def day_22():  # starting to use libraries
@@ -328,19 +329,97 @@ def day_28():  # Challenge Part 2
         print("The battle continues")
 
 
-def day_29():
+def day_29():  # adding commands to print statements
     print()
     print("Entering Day 29")
 
+    # for i in range(0, 100):
+    # print(i, end=" ")
 
-def day_30():
+    # you can also do end="\n" to make it print on a new line.
+    # you can also do end="\t" to make it print with a tab.
+    # you  can also do end "\v" to print with a vertical tab.
+
+    # also, if you want to turn the cursor on you can do print('\033[?25l', end="").
+    # and for cursor off you can do print('\033[?25h', end="").
+
+    print("Colour changing text")
+
+    def choose_colour():
+        colour = input("What colour would you like to choose? ")
+        return colour
+
+    colour = choose_colour()
+
+    def output():
+        text = input("What text would you like to display? ")
+        return text
+
+    text = output()
+    while True:
+        if colour == "black":
+            print('\033[30m', text, '\033[0m', sep="", end="")
+            print()
+            break
+
+        elif colour.lower() == "red":
+            print('\033[31m', text, '\033[0m', sep="", end="")
+            print()
+            break
+
+        elif colour.lower() == "green":
+            print('\033[32m', text, '\033[0m', sep="", end="")
+            print()
+            break
+
+        elif colour.lower() == "brown":
+            print('\033[33m', text, '\033[0m', sep="", end="")
+            print()
+            break
+
+        elif colour.lower() == "blue":
+            print('\033[34m', text, '\033[0m', sep="", end="")
+            print()
+            break
+
+        else:
+            print("Sorry, I did not account for that colour")
+            break
+
+
+def day_30():  # F strings
     print()
     print("Entering Day 30")
 
+    # you can do f" {variable: alignment  symbol , then number of characters to use}"
 
-def day_31():
+    # to right align use > and to left align use < and to center use ^
+
+    # f{var: <3} left align with 3 spaces
+
+    print("Feedback form")
+
+    for i in range(1, 30):
+        feedback = input(f"Enter your feedback for day {i}: ")
+        print(f"Day {i} feedback you said it was")
+        print(f"{feedback: ^20}")
+        print("")
+
+
+def day_31():  # Mock up of a GUI
     print()
     print("Entering Day 31")
+    print("GUI app")
+
+    play = "Play"
+    pause = "Pause"
+    new = "Next"
+
+    print("\033[34m=== Music App ===\033[0m", end="\n")
+
+    print(f"{play:<35}")
+    print(f"{pause:^35}")
+    print(f"{new:>35}")
 
 
 def day_32():
