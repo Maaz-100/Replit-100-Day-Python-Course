@@ -11,7 +11,7 @@ def day_21():  # for loop + maths skills
     limit = end
     end = (table * end) + table
     correct = 0
-    j = 0  # made j as another counter to show multplier
+    j = 0  # made j as another counter to show multiplier
 
     for i in range(0, end, table):
         ans = int(input(
@@ -205,7 +205,7 @@ def day_27():  # Challenge Part 1
         import random
 
         hp = random.randint(1, 6) * random.randint(1, 12)
-        hp = hp // 2  # whole number divsion which returns only the
+        hp = hp // 2  # whole number division which returns only the
         hp = hp + 10
         return hp
 
@@ -217,7 +217,7 @@ def day_27():  # Challenge Part 1
         pwr = pwr + 12
         return pwr
 
-    def character_genrator():
+    def character_generator():
         name = input("Enter Your Character Name: ")
         title = input("Give Your Character A  Title . eg The Wise: ")
         role = input("Give your Character a role; Supporter , Attacker , Scouter , Defender :")
@@ -232,7 +232,7 @@ def day_27():  # Challenge Part 1
         if stop.lower() == "stop":
             break
         else:
-            character_genrator()
+            character_generator()
 
 
 def day_28():  # Challenge Part 2
@@ -244,7 +244,7 @@ def day_28():  # Challenge Part 2
         import random
 
         hp = random.randint(1, 6) * random.randint(1, 12)
-        hp = hp // 2  # whole number divsion which returns only the
+        hp = hp // 2  # whole number division which returns only the
         hp = hp + 10
         return hp
 
@@ -256,7 +256,7 @@ def day_28():  # Challenge Part 2
         pwr = pwr + 12
         return pwr
 
-    def character_genrator_1():
+    def character_generator_1():
         name_1 = input("Enter Your Character 1 Name: ")
         title_1 = input("Give Your Character A  Title, The Wise: ")
         role_1 = input("Give your Character a role; Supporter , Attacker , Scouter , Defender :")
@@ -271,7 +271,7 @@ def day_28():  # Challenge Part 2
 
         return name_1, title_1, role_1, hitpoint_1, power_1
 
-    def character_genrator_2():
+    def character_generator_2():
         name_2 = input("Enter Your Character 2 Name: ")
         title_2 = input("Give Your Character A  Title, eg The Wise: ")
         role_2 = input("Give your Character a role; Supporter , Attacker , Scouter , Defender :")
@@ -286,8 +286,8 @@ def day_28():  # Challenge Part 2
 
         return name_2, title_2, role_2, hitpoint_2, power_2
 
-    name_1, title_1, role_1, hitpoint_1, power_1 = character_genrator_1()
-    name_2, title_2, role_2, hitpoint_2, power_2 = character_genrator_2()
+    name_1, title_1, role_1, hitpoint_1, power_1 = character_generator_1()
+    name_2, title_2, role_2, hitpoint_2, power_2 = character_generator_2()
 
     print("The battle starts")
 
@@ -422,9 +422,15 @@ def day_31():  # Mock up of a GUI
     print(f"{new:>35}")
 
 
-def day_32():
+def day_32():  #list
+    import random
     print()
     print("Entering Day 32")
+    print("Random Greetings")
+
+    greetings = ["Hello", "Hola", "Bonjour", "Ciao", "Hallo", "Salam", "Namaste", "Konnichiwa", "Zdravstvuyte", "Annyeonghaseyo"]
+
+    print(greetings[random.randint(0, len(greetings) - 1)]) # printing a random greeting by using random.randint
 
 
 def day_33():
