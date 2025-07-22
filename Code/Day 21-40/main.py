@@ -436,6 +436,35 @@ def day_32():  #list
 def day_33():
     print()
     print("Entering Day 33")
+    print("To Do App")
+
+    to_do = []
+
+    while True:
+        choice = input("Type Add or Remove or Exit: ")
+
+        if choice.lower() == "add":
+            to_do.append(input("Enter something to Add: "))
+            print("")
+
+        elif choice.lower() == "remove":
+            to_do.remove(input("Enter something to Remove: "))
+            print("")
+
+        elif choice.lower() == "exit":
+            break
+
+        else:
+           print("Invalid choice")
+           continue
+
+        print("To do ")
+        for tasks in to_do:
+            print(tasks)
+        print("")
+
+    print("bye")
+
 
 
 def day_34():
