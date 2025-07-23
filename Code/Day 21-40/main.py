@@ -468,9 +468,70 @@ def day_33():
 
 
 def day_34():
+    import time
     print()
     print("Entering Day 34")
+    print("fake emails Spammer")
 
+    fake_emails = []
+
+    def menu():
+        print("1 = Add email")
+        print("2 = Remove email")
+        print("3 = Spam")
+        print("4 = Exit")
+
+
+        choice = int(input("Where would you like go? "))
+        print()
+
+        return choice
+
+    def add():
+        fake_emails.append(input("Enter email to Add: "))
+        print("")
+        print("New list of emails")
+        for email in fake_emails:
+            print(email)
+        print()
+
+    def remove():
+        fake_emails.remove(input("Enter email to Remove: "))
+        print("New list of emails")
+        for email in fake_emails:
+            print(email)
+        print()
+
+    def spam():
+        print()
+
+        for email in fake_emails: # prints every email in a new line
+            print("hello ", email)
+            print("it has come to our attention that you're missing out on the")
+            print("amazing Replit 100 days of code. We insist you do it right away.")
+            print("If you don't we will pass on your email address to every spammer we've")
+            print("ever encountered and also sign you up to the My Little Pony newsletter,")
+            print("because that's neat. We might just do that anyway.") # the prompt i was told to use , plz dont judge me
+            time.sleep(1)
+            print()
+
+    def leave():
+        print("Thank you for using my app")
+
+
+    while True:
+        choice = menu()
+        if choice == 1:
+            add()
+        elif choice == 2:
+            remove()
+        elif choice == 3:
+            spam()
+        elif choice ==4:
+            leave()
+            break
+        else:
+            print("not a valid choice")
 
 def day_35():
     print()
