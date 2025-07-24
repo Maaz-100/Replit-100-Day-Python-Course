@@ -4,9 +4,9 @@ This repository contains my personal solutions to Replit’s 100 Days of Python 
 
 
 My Progress
-Days 1–25:Mostly introductory content. Each day builds gently on the last, gradually increasing diffculty. I alreadly knew all of these python skills so I was going through the code very easily.
+Days 1–25: Mostly introductory content. Each day builds gently on the last, gradually increasing diffculty. I alreadly knew all of these python skills so I was going through the code very easily.
 Day 26 onwards: Things start getting harder they require a bit more careful thinking but still pretty easy.
-
+Day 35 Onwards : This where I need to really pay attetnion as the programs start to get more complex. The time taken to solve these problems increase aswell as I start making logic errors.
 
  Why This Repo Exists
 
