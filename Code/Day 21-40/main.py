@@ -433,7 +433,7 @@ def day_32():  #list
     print(greetings[random.randint(0, len(greetings) - 1)]) # printing a random greeting by using random.randint
 
 
-def day_33():
+def day_33(): # manipulating lists
     print()
     print("Entering Day 33")
     print("To Do App")
@@ -467,7 +467,7 @@ def day_33():
 
 
 
-def day_34():
+def day_34(): # manipulating lists further
     import time
     print()
     print("Entering Day 34")
@@ -533,9 +533,64 @@ def day_34():
         else:
             print("not a valid choice")
 
-def day_35():
+def day_35(): # to do app v2
+    import time
     print()
     print("Entering Day 35")
+    print("A Better To Do App")
+
+    to_do = []
+
+    while True:
+        choice = input("Type Add or Edit or Exit: ")
+
+        if choice.lower() == "add":
+            add= input("What do you want to add: ")
+            if add in to_do:
+                time.sleep(0.5)
+                print("Cant be added item already exists ")
+            else:
+                to_do.append(add)
+            print("")
+
+        elif choice.lower() == "edit":
+
+            choice = input("Change or delete: ")
+            print("")
+
+            if choice.lower() == "change":
+                old_item = input("Type what item you would like to change: ")
+
+                if old_item in to_do:
+                    new_item = input("what do you want the new item to be ")
+                    location = to_do.index(old_item)
+                    to_do[location] = new_item
+
+                else:
+                    print("That item doesnt exist in the list ")
+
+
+            elif  choice.lower() == "delete":
+                delete  = input("What item do you want to delete: ")
+                if delete in to_do:
+                    to_do.remove(delete)
+                else:
+                    print("This item doesnt exist")
+
+            else:
+                print("Not Valid")
+
+        elif choice.lower() == "exit":
+            break
+
+        else:
+            print("Invalid choice")
+            continue
+
+        print("Current To do ")
+        for tasks in to_do:
+            print(tasks)
+        print("")
 
 
 def day_36():
