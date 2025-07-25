@@ -144,7 +144,7 @@ def day_26():  # Using OS library
     # if True:
     #    play() 
 
-    import os, pygame, time
+    import os, pygame
 
     pygame.init()
     pygame.mixer.init()
@@ -593,9 +593,58 @@ def day_35(): # to do app v2
         print("")
 
 
-def day_36():
+def day_36(): # string manipulation
+    import time
     print()
     print("Entering Day 36")
+
+    # .lower() to make lowercase
+    # .upper() to make uppercase
+    # .title() first letter of every word uppercase
+    # .capitalize() first character uppercase
+    # .strip() to remove any whitespaces
+
+    print("Storing names")
+
+    names = []
+    while True:
+        print()
+        stop = input("Carry on? ")
+
+        if stop.lower().strip().lower() == "no":
+            break
+
+        first_name = input("Enter first name: ").strip().capitalize()
+        surname = input("Enter surname: ").strip().capitalize()  #.strip first as capitalise only capitalise the first char
+
+        if f"{first_name} {surname}" not  in names:
+            names.append(f"{first_name} {surname}")
+        else:
+            time.sleep(0.8)
+            print("Name already exist")
+
+        print()
+        print("New list of names")
+        for name in names:
+            print(name)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 def day_37():
