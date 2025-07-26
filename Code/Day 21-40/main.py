@@ -629,28 +629,34 @@ def day_36(): # string manipulation
             print(name)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def day_37():
+def day_37(): # Slicing
     print()
     print("Entering Day 37")
 
+    # [num] extracts that char
+    # [x:y] extracts from x to y
+    # [x:] extracts from x to the end of the string
+    # [:y] extracts from the start to position y
+    # .split() splits a string when there is something in the brackets
+
+    print("Star Wars Name Generator")
+
+    first_name = input("Enter your first name: ").lower()
+    last_name = input("Enter your last name: ").lower()
+
+    mother_maiden_name = input("Enter your Mothers maiden name: ").lower()
+    city = input("Enter the city you were born in: ").lower()
+
+    first_name = first_name [:3]
+    last_name = last_name[:3]
+
+    mother_maiden_name = mother_maiden_name[:2]
+    city = city[-3:]
+
+    new_name = f"{first_name}{last_name} {mother_maiden_name}{city}"
+    new_name= new_name.title()
+
+    print("Your Star Wars Name is: ",new_name)
 
 def day_38():
     print()
