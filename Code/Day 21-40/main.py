@@ -658,10 +658,30 @@ def day_37(): # Slicing
 
     print("Your Star Wars Name is: ",new_name)
 
-def day_38():
+def day_38(): # For loops on strings
     print()
     print("Entering Day 38")
+    print("Colour changing strings")
 
+    txt = input("Enter anything: ")
+
+    for character in txt:
+        if character.lower() == "r":
+            print("\033[31m", end="")
+        elif character == " ":
+            print("\033[0m", end="")
+        elif character == "b":
+            print("\033[34m", end="")
+        elif character == "y":
+            print("\033[33m", end="")
+        elif character == "g":
+            print("\033[32m", end="")
+        elif character == "p":
+            print("\033[35m", end="")
+
+        print(character , end="")
+
+    print()
 
 def day_39():
     print()
