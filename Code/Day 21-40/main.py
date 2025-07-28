@@ -683,9 +683,72 @@ def day_38(): # For loops on strings
 
     print()
 
-def day_39():
+def day_39(): # Make a hang man game using everything I have learnt so far
     print()
     print("Entering Day 39")
+    import random, time
+
+    print("Hangman Game")
+    print()
+    words_list = ["python", "java", "kotlin", "javascript", "ruby", "swift", "go", "rust", "typescript", "php", "c",
+                  "c++", "c#", "swift", "go", "typescript", "php"]
+
+    random_word = random.choice(words_list)  # chooses a random word from the list
+
+    word_to_guess = []
+
+    for letter in random_word:
+        word_to_guess.append(letter)  # Adds each letter to a list which acts as a master list
+
+    blanks = []
+
+    for i in range(len(word_to_guess)):
+        blanks.append("_")  # This will create a basic ui so the user knows what they have guessed so far
+
+    guessed_letters = []
+    attempts = 0
+
+    while True:
+        user_guess = input("Guess a letter: ")
+
+        if user_guess in guessed_letters:
+            print("You already guessed that letter.")
+            continue
+
+        elif user_guess in word_to_guess:
+            time.sleep(0.5)
+            print("Correct!")
+            time.sleep(0.5)
+            print()
+            guessed_letters.append(user_guess)
+
+            for position in range(len(word_to_guess)):
+                if user_guess == word_to_guess[position]:
+                    blanks[position] = user_guess
+                    # the code goes through each index and sees if it matches with the word to guess
+                    # if so then the program will take that index and add that letter to the blanks list
+        else:
+            time.sleep(0.5)
+            print("Incorrect")
+            time.sleep(0.5)
+            print()
+            attempts = attempts + 1
+            guessed_letters.append(user_guess)
+
+        if "_" not in blanks:
+            print("Game over")
+            break
+
+        print("These are the letters you have already guessed")
+        print(guessed_letters)
+        print("You have used ", attempts, " attempt(s)")
+        print()
+        print("This is what you have left to guess")
+        print(blanks)
+        print()
+
+    print("It took you ", attempts, " attempts to solve the puzzle")
+    print("Regardless you still managed to guess ", word_to_guess)
 
 
 def day_40():
