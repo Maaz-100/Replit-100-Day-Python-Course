@@ -751,10 +751,29 @@ def day_39(): # Make a hang man game using everything I have learnt so far
     print("Regardless you still managed to guess ", word_to_guess)
 
 
-def day_40():
+def day_40(): # dictionary
     print()
     print("Entering Day 40")
 
+    #Dictioany work using a key and value pair by calling a key you can get the value
+    # To print, print(dict_name["key"])
+    # To change a value dict["key"] = "New_key"
+    # Pro tip when using f-strings use " for the f-string and ' for the key
+
+    print("Contact info")
+    contact_details = {"name": "placeholder" , "mobile_num":"placeholder" ,"dob": "placeholder" ,"email": "placeholder" , "address": "placeholder" }
+
+    contact_details["name"] = input("Enter The Name: ")
+    contact_details["mobile_num"] = input("Enter The Mobile Number: ")
+    contact_details["dob"] = input("Enter The Date Of Birth: ")
+    contact_details["email"] = input("Enter The Email: ")
+    contact_details["address"] = input("Enter The Address: ")
+
+    print(f"""Your person is called {contact_details['name']}
+    They live at {contact_details['address']}
+    They were born on {contact_details['dob']}
+    To contact them you can email them on {contact_details['email']}
+    Or phone them on {contact_details['mobile_num']}""")
 
 while True:
     day = int(input("Which day do you want to go to. Or Press 0 to exit: "))
