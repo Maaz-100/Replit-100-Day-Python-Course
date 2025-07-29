@@ -775,6 +775,15 @@ def day_40(): # dictionary
     To contact them you can email them on {contact_details['email']}
     Or phone them on {contact_details['mobile_num']}""")
 
+    # Code review:
+    # You can just do contact_details = ["name", "mobile_num", "dob", "email", "address"]
+
+    # Or
+    
+    # contact_details = {}
+    # contact_details["name"] = input("Enter The Name: ")
+    # contact_details["mobile_num"] = input("Enter The Mobile Number: ")
+    # contact_details["dob"] = input("Enter The Date Of Birth: ")
 while True:
     day = int(input("Which day do you want to go to. Or Press 0 to exit: "))
 
