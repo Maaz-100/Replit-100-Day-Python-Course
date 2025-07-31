@@ -17,7 +17,23 @@ def day41(): # how to print dict properly
         # any variables can work
 
 def day42():
-    print("🐾 Day 42: MokeBeast")
+    print("🐾 Day 42: MokeBeast") # (pokemon), Challenge using dictionaries
+
+    pokemon1= {"name": "" , "type": "" , "special_move": "" , "starting_hp": "" ,"energy": ""}
+
+    pokemon1["name"] = input("Enter your Pokemons name: ")
+    pokemon1["type"] = input("Enter your Pokemons type: ")
+    pokemon1["special_move"] = input("Enter your Pokemons special move: ")
+    pokemon1["starting_hp"] = input("Enter your Pokemons HP: ")
+    pokemon1["energy"] = input("Enter your Pokemons Energy: ")
+    print()
+    
+    for name , value in pokemon1.items():
+        print(f"Your pokemons {name} is {value}")
+
+
+
+
 
 
 def day43():
