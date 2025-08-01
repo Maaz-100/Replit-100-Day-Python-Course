@@ -1,4 +1,6 @@
 # Day 41 to Day 60 subroutines
+from threading import main_thread
+
 
 def day41(): # how to print dict properly
     print("🗝️ Day 41: I've Lost My Keys")
@@ -37,7 +39,39 @@ def day42():
 
 
 def day43():
-    print("📦 Day 43: Taking Lists to a New Dimension")
+    print("📦 Day 43: Taking Lists to a New Dimension") # 2d lists
+    # when accessing lists you do the row first then column as opposed to in maths where its x(colum) than y(row)
+    # my_list[row][column] = data
+    print("Bingo Generator")
+    import random
+
+
+    bingo_list = [[0, 0, 0], [0, 0, 0], [0, 0, 0]] # added 0 otherwise you will get a index out of range message
+
+    for i in range(3):
+        for j in range (3):
+            bingo_list[i][j] = random.randint(1,90) # adds random numbers to a 2d list
+
+    bingo_list [1][1] = "Bingo" # bingo games have the word bingo in the middle
+
+    for i in range(3):
+        print(bingo_list[0][i],end=" ")
+
+    print()
+
+    for i in range(3):
+        print(bingo_list[1][i], end=" ")
+
+    print()
+
+    for i in range(3):
+        print(bingo_list[2][i], end=" ")
+
+    print()
+    print()
+
+
+
 
 
 def day44():
