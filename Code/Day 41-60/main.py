@@ -75,8 +75,88 @@ def day43():
 
 
 def day44():
+    import  random
     print("🧮 Day 44: Dynamic 2D Lists")
+    print("full game of bingo")
 
+    def init_board():
+        bingo_list = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]  # added 0 otherwise you will get a index out of range message
+
+        for i in range(3):
+            for j in range(3):
+                bingo_list[i][j] = random.randint(1, 90)  # adds random numbers to a 2d list
+
+        bingo_list[1][1] = "Bingo"  # bingo games have the word bingo in the middle
+
+        for i in range(3):
+            print(bingo_list[0][i], end=" ")
+
+        print()
+
+        for i in range(3):
+            print(bingo_list[1][i], end=" ")
+
+        print()
+
+        for i in range(3):
+            print(bingo_list[2][i], end=" ")
+
+        return bingo_list
+
+
+    def print_board():
+        for i in range(3):
+            print(bingo_list[0][i], end=" ")
+        print()
+        for i in range(3):
+            print(bingo_list[1][i], end=" ")
+        print()
+        for i in range(3):
+            print(bingo_list[2][i], end=" ")
+
+    no_x = 0
+    while True:
+        print()
+        bingo_list = init_board()
+        print()
+        print()
+
+        fine = input(" Does the board have duplicates? ")
+
+        if fine.lower() == "no":
+            break
+        else:
+            continue
+
+    while True:
+        num = int(input("What number did you get: "))
+
+        if any(num in row for row in bingo_list):
+            print("That number is in the list, Well done")
+
+            for i in range(3):
+                for j in range(3):
+                    if num == bingo_list[i][j]:
+                        row = i
+                        column = j
+                        bingo_list[i][j] = "X"
+
+                        print_board()
+                        print()
+                        print()
+                        no_x = no_x +1
+                        break
+
+
+
+        else:
+            print("That number doesnt exist in the bingo list ,Sorry")
+            print()
+
+        if no_x == 8:
+            print()
+            print("BINGO")
+            break
 
 def day45():
     print("✅ Day 45: Get it 'to done'!")
