@@ -158,9 +158,126 @@ def day44():
             print("BINGO")
             break
 
-def day45():
+def day45(): # to do list with priorities
+    import time
     print("✅ Day 45: Get it 'to done'!")
 
+    to_do = [["Task Name", "Priority", "Due"]] # creates a 2d list with headings
+
+    def add():
+        print()
+        print("Adding Tasks")
+
+        title =input("Enter the tasks name: ")
+        priority  = input("Enter the priority: ")
+        due = input("Enter Due Date in dd/mm/yyyy: ")
+
+        row = [title,priority,due]
+        to_do.append(row)
+
+
+    def view():
+        rows = len(to_do)
+        print("What do you want to sort by? (Priority or Date of Entry)")
+        sort = input("Enter p /de")
+
+
+        if sort.lower() == "p":
+
+            high_priority_list = []
+            medium_priority_list = []
+            low_priority_list = []
+            other_priority_list = []
+            skip_header = 1
+
+            for i in range (rows):
+
+                if to_do[i][1].lower() == "high":
+                    high_priority_list.append(i)
+
+            for i in range (rows):
+                if to_do[i][1].lower() == "medium":
+                    medium_priority_list.append(i)
+
+            for i in range (rows):
+                if to_do[i][1].lower() == "low":
+                    low_priority_list.append(i)
+
+            for i in range (rows):
+                if to_do[i][1].lower() not in ["low", "medium", "high"]:
+                    low_priority_list.append(i)
+
+            high_priority_len = len(high_priority_list)
+            medium_priority_len = len(medium_priority_list)
+            low_priority_len = len(low_priority_list)
+            other_priority_len = len(other_priority_list)
+
+            for i in range(high_priority_len):
+                for item in to_do[high_priority_list[i]]:
+                    print(item, end=" | ")
+                print()
+
+            for i in range(medium_priority_len):
+                for item in to_do[medium_priority_list[i]]:
+                    print(item, end=" | ")
+                print()
+
+            for i in range(low_priority_len):
+                for item in to_do[low_priority_list[i]]:
+                    print(item, end=" | ")
+                print()
+
+            for i in range(other_priority_len):
+                for item in to_do[other_priority_list[i]]:
+                    print(item, end=" | ")
+                print()
+
+
+        else:
+            for row in to_do:
+                for item in row :
+                    print(item,end=" | ")
+                print()
+
+
+
+    def delete():
+        to_delete = input("What task would you like to delete: ")
+
+
+        for i in range(len(to_do)):
+            if to_do[i][0].lower() == to_delete.lower():
+                del to_do[i]
+
+
+    def menu():
+        print()
+        print("1. For adding an item")
+        print("2. For viewing your list")
+        print("3. For deleting an item ")
+
+
+        choice = int(input("What is your choice: "))
+        time.sleep(0.5)
+
+        if choice == 1:
+            add()
+        elif choice == 2:
+            view()
+        elif choice == 3:
+            delete()
+
+        else:
+            print("Not a valid choice")
+            print()
+            menu()
+
+    while True:
+        exit = input("Do you want to exit: ")
+        if exit.lower() == "yes":
+            break
+
+        menu()
 
 def day46():
     print("📚 Day 46: Dictionaries are Back...")
