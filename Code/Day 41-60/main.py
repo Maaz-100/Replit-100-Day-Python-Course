@@ -172,7 +172,7 @@ def day45(): # to do list with priorities
         priority  = input("Enter the priority: ")
         due = input("Enter Due Date in dd/mm/yyyy: ")
 
-        row = [title,priority,due]
+        row = [title,priority,due] # 2d list is created here
         to_do.append(row)
 
 
@@ -184,15 +184,15 @@ def day45(): # to do list with priorities
 
         if sort.lower() == "p":
 
-            high_priority_list = []
+            high_priority_list = []  # x_priority_list stores the location of each corresponding priority
             medium_priority_list = []
             low_priority_list = []
             other_priority_list = []
-            skip_header = 1
+
 
             for i in range (rows):
 
-                if to_do[i][1].lower() == "high":
+                if to_do[i][1].lower() == "high":  #x_priority gets the location of each corresponding priority
                     high_priority_list.append(i)
 
             for i in range (rows):
@@ -212,7 +212,7 @@ def day45(): # to do list with priorities
             low_priority_len = len(low_priority_list)
             other_priority_len = len(other_priority_list)
 
-            for i in range(high_priority_len):
+            for i in range(high_priority_len): # prints high priority first
                 for item in to_do[high_priority_list[i]]:
                     print(item, end=" | ")
                 print()
@@ -247,7 +247,7 @@ def day45(): # to do list with priorities
 
         for i in range(len(to_do)):
             if to_do[i][0].lower() == to_delete.lower():
-                del to_do[i]
+                del to_do[i] #delted here
 
 
     def menu():
@@ -279,9 +279,32 @@ def day45(): # to do list with priorities
 
         menu()
 
-def day46():
-    print("📚 Day 46: Dictionaries are Back...")
 
+def day46(): #creating a 2D Dictionary
+    print("📚 Day 46: Dictionaries are Back...")
+    pokemon={}
+
+    while True:
+
+        name = input("Enter your Pokemons name: ")
+        type = input("Enter your Pokemons type: ")
+        special_move  = input("Enter your Pokemons special move: ")
+        starting_hp= input("Enter your Pokemons HP: ")
+        energy = input("Enter your Pokemons Energy: ")
+
+        pokemon[name] = {"type":type , "special_move":special_move , "starting_hp":starting_hp , "energy":energy }
+        # uses the name as the identifier for the dictionary
+
+        print()
+        if input("Add another Pokemon (y/n): ").lower() == "n" :
+            break # more efficient don't need to store any variables
+
+    print()
+    for key, value in pokemon.items():
+        print(f"{key:^12} | {value["type"]:^10} | {value["special_move"]:^12} | {value["starting_hp"]:^4} | {value["energy"]}:^5|")
+        # key is the name of the pokemon
+        # value["xxx"] specify which 2nd value to retrieve
+        # ^n center alllings a number 
 
 def day47():
     print("🎴 Day 47: Top Trumps")
