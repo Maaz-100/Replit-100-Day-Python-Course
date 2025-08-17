@@ -306,8 +306,27 @@ def day46(): #creating a 2D Dictionary
         # value["xxx"] specify which 2nd value to retrieve
         # ^n center alllings a number 
 
-def day47():
+def day47(): # Challenge create TOP Trumps  using 2D-dicts
+    import  time
     print("🎴 Day 47: Top Trumps")
+
+    top_trump_char = {
+        "Starter_Boi": {"power": 60, "hp": 60},
+        "Speedy_Boi": {"power": 30, "hp": 30},
+        "Heavy_Boi": {"power": 80, "hp": 55},
+        "Balanced_Boi": {"power": 50, "hp": 50}}
+
+    print("These are the Character that you can choose")
+    print("Chose Wisely")
+    time.sleep(0.5)
+    print()
+    for key , value in top_trump_char.items():
+        print(key)
+
+    player_choice = input("Who do you chose: ")
+
+    if player_choice.lower() == "starter" or "starter boi" or "starter_boi":
+        print(f"{top_trump_char["Starter_Boi"]} ")
 
 
 def day48():
